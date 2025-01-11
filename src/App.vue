@@ -1,6 +1,15 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import axios from 'axios'
+
+axios.get('/api/endpoint')
+  .then(response => {
+    console.log(response.headers);
+  })
+  .catch(error => {
+    console.error('Error fetching headers:', error);
+  });
 </script>
 
 <template>
